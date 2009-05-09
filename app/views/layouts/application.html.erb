@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <title>mnordin</title>
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="Content-Type"/>
+		<meta name="robots" content="INDEX,FOLLOW" />
+		<meta name="classification" content="" />
+		<meta name="author" content="Markus Nordin" />
+		<meta name="reply-to" content="markus.nordin@gmail.com" />
+		<meta name="email" content="markus.nordin@gmail.com" />
+		<meta name="copyright" content="Markus Nordin" />
+		<meta name="description" content="Min feed som täcker ungefär allting jag gör på webben." />
+		<meta name="keywords" content="Markus Nordin, mnordin, rss, feed, twitter, flickr, youtube, tumblr" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://pipes.yahoo.com/pipes/pipe.run?_id=8HJ3534q3hGq14gEJ5REag&amp;_render=rss"/>
+
+		<meta name="distribution" content="Global" />
+		<meta name="rating" content="General" />
+		<meta name="revisit-after" content="7 Days" />
+
+		<link rel="icon" type="image/x-icon" href="http://mnordin.net/favicon.ico" />
+		<link rel="shortcut icon" type="image/x-icon" href="http://mnordin.net/favicon.ico" />
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset/reset-min.css" /> 
+    <%= stylesheet_link_tag 'application' %>
+  </head>
+  <body>
+		<div id="wrapper">
+			<div id="header">
+				<h1>mnordin</h1>
+				<p>Here is my feed which covers just about everything I do. Enjoy!</p>
+			</div>
+			<div id="masthead">
+				<ul>
+					<li><a class="menutwitter" href="http://twitter.com/mnordin">gör <span>twitter</span></a></li>
+					<li><a class="menutumblr" href="http://mnordin.tumblr.com/">gillar <span>tumblr</span></a></li>
+					<li><a class="menuflickr" href="http://www.flickr.com">fotar <span>flickr</span></a></li>
+					<li><a class="menuyoutube" href="http://www.youtube.com">ser <span>youtube</span></a></li>
+				</ul>
+			</div>
+			<div id="main" class="clearfix">
+				<%= yield %>
+			</div>
+		</div>
+		<div id="footer">
+			<p>Markus Nordin<br /><span class="email">markus dot nordin at gmail dot com</span><br /><span class="phone">&nbsp;</span></p>
+		</div>
+		
+		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
+		<%= javascript_include_tag 'application' %>
+  </body>
+</html>

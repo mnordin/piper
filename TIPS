@@ -1,0 +1,122 @@
+
+
+mnordin
+18.19
+<strong><%= pipe_entry.date %></strong><br/>
+       <% if pipe_entry.description.include?('<img') %>
+           <em class="tumblrimg"><%= pipe_entry.description %></em>
+       <% else %>
+           <span><%= pipe_entry.title %></span>
+       <% end %>
+så just nu, gör ju jobbet men railsgurun i mig skakar på huvudet
+
+Druiden - My mac skillz, let me show you them
+18.20
+if satsen är lugnt att ha i vyn
+dock bör det vara typ
+
+mnordin
+18.20
+låt mig stoppa dig där
+
+Druiden - My mac skillz, let me show you them
+18.20
+if pipe_entry.has_image?
+
+mnordin
+18.20
+oj
+jävlar
+
+Druiden - My mac skillz, let me show you them
+18.20
+eller nåt i den stilen
+
+mnordin
+18.20
+daaamn boy, finns det?
+
+Druiden - My mac skillz, let me show you them
+18.20
+nej
+du måste ju göra det
+
+mnordin
+18.21
+aaah
+kan nog fixa själv, dont paste!
+
+Druiden - My mac skillz, let me show you them
+18.21
+haha
+jag var nästan klar 
+
+mnordin
+18.21
+ja exakt
+såg dig komma igång 
+
+Druiden - My mac skillz, let me show you them
+18.23
+men
+på flickr är description BARA en img tag eller?
+typ
+frågan är om du inte bara borde fråga vad den har för typ
+
+mnordin
+18.24
+har inte börjat med flickr än, den är för tumblr endast. behöver nog en liten snyggare grej åt flickr/youtube (som också får img)
+
+Druiden - My mac skillz, let me show you them
+18.24
+if entry.type.tumblr?
+.flickr?
+menar jag
+jaha
+vafan
+jag är ute och cyklar 
+
+mnordin
+18.24
+och inte alla tumblr innehåller img, vissa är citat eller länkar
+advanced!
+
+Druiden - My mac skillz, let me show you them
+18.24
+men borde du inte plocka ut img taggen ur description
+description kan väl innehålla allt möjligt?
+på yahoo pipes
+så letar de ju efter img i alla entries
+och gör en tumnagel av den förta bilden
+vad jag förstod
+kan ju vara ett alternativ
+
+mnordin
+18.25
+tumblr är lite annorlunda, men jag hajar vad du menar. jag tror det är ett bättre sätt att göra det på
+
+Druiden - My mac skillz, let me show you them
+18.26
+beror på vad man vill lite
+om du vill göra det här endast för tumblr inlägg som är tumblr images
+så kanske du måste komba
+entry.type.tumblr? && entry.has_image?
+eller kanske bara
+entry.tumblr_image?
+
+mnordin
+18.27
+yah, tumblr kör description som lång text (för lång) och title som kortare. behöver bara description för img
+det där blir snyggt
+
+Druiden - My mac skillz, let me show you them
+18.27
+så kanske den kollar descriptions.begins_with("<img")
+så att den inte blandar ihop med tumblr inlägg som innehåller både text och bilder
+eller nåt sånt
+begins_with och ends_with är åsm ruby sträng funktioner iaf 
+begins_with?() är det nog till och med
+starts_with?
+var det!
+>> "asdf".starts_with?("as")
+=> true

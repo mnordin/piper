@@ -1,0 +1,10 @@
+log/*.log
+db/development_structure.sql
+*~
+.DS_Store
+rspec.html
+public/system/*
+
+tmp/*
+coverage/*
+TODO

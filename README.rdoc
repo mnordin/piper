@@ -1,0 +1,18 @@
+= Piper
+
+A minimal app that parses yahoo pipes and displays its items in a minimal fashion. 
+The neat thing is that by adding a "type" attribute to all items in the feed the
+value of that attribute is assigned as a class of the <div> representation of that
+item.
+
+== Set it up
+
+  sudo rake gem:install
+  script/server
+  
+== Parse your own pipe
+
+Piper expects a pipe id to be provided to the pipe entries controller. Try the example
+and replace "CMEM8lEk3hGA_tvB3XBDOQ" with your own id.
+
+  http://localhost:3000/pipes/CMEM8lEk3hGA_tvB3XBDOQ/entries

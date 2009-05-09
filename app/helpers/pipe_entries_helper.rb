@@ -1,0 +1,2 @@
+module PipeEntriesHelper
+end
