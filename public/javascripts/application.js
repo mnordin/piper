@@ -42,18 +42,16 @@ $('em.tumblrimg').each(function(){
 // Hides all the entries instantly
 // For obvious reasons, this needs to be fired after all the breakify calculations
 // Disabled during development mode
-//$('.twitter, .tumblr, .flickr, .youtube, .github').hide();
+$('.twitter, .tumblr, .flickr, .youtube, .github').hide();
 
 // Animates everything on DOM load
 // Disabled during development mode
-/*
 $(window).load(function(){
 	$("#main > div:first-child").show('1', function () {
 		// use callee so don't have to name the function
 		$(this).next().show('1', arguments.callee);
 	});
 });
-*/
 
 // Menu interaction
 var displaythis = 'all';
@@ -63,6 +61,7 @@ $('#masthead li a').click(function(){
 		displaythis = 'all';
 		$('#masthead li a').removeClass('selected');
 		$('#main > div').show();
+		$('#main').css( 'background' , 'transparent url("../images/grid_bg.gif") repeat-y 0 0' );
 		return false;
 	}
 	displaythis = $(this).children().text();
@@ -70,6 +69,7 @@ $('#masthead li a').click(function(){
 	$(this).addClass('selected');
 	$('#main > div').hide();
 	$('div.'+displaythis+'').show();
+	$('#main').css( 'background' , 'transparent url("../images/grid_'+displaythis+'.gif") repeat-y 0 0' );
 	return false;
 });
 
