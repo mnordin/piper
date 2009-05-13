@@ -3,11 +3,11 @@
 		<strong><%= pipe_entry.date %></strong><br/>
 		
 		<% if pipe_entry.description.include?('<img') %>
-			<em class="tumblrimg"><%= pipe_entry.description %></em>
-		
-		<% if pipe_entry.source == 'youtube' %>
-      <img class="youtube_thumb" src="http://gdata.youtube.com/feeds/base/videos/KPxE1aOiBNM" /> 
-    <% end %>
+		<em class="tumblrimg">
+			<% if pipe_entry.description.include?('via')%>
+				<%= link_to pipe_entry.description, pipe_entry.link %></em>
+			<% end %>
+		<%= pipe_entry.description %></em>
 		
 		<% else %>
 			<span><%= pipe_entry.title %></span>
