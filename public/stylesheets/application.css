@@ -10,7 +10,7 @@ body { text-align: center; background: transparent url("../images/background-alp
 #header { height: 2em; overflow: hidden; height: 21em; position: relative; }
 #header h1, #header p { text-indent: -9999px; }
 #header h1 { display: block; background: transparent url("../images/logo_white.gif") no-repeat 0 0; height: 20em; width: 100%; margin-top: 1em; }
-#header p.versiontag { position: absolute; right: 0; top: .25em; font-size: 3em; padding: .15em .3em .2em .3em; background: #000; color: #fff; text-indent: 0; }
+#header p.versiontag { position: absolute; right: 0; top: .25em; font-size: 3em; padding: .15em .3em .18em .3em; background: #000; color: #fff; text-indent: 0; }
 
 #masthead { width: 100%; left: 0px; height: 5em; background: #000; line-height: 5em; }
 
@@ -44,7 +44,7 @@ em.tumblrimg img { border: .8em solid #000; padding: 0; }
 .flickr { margin-left: 48em; }
 .youtube { margin-left: 72em; }
 
-.github { margin-left: 0;  }
+.github { margin-left: 0; width: 96em; }
 .github p { background: #000; }
 .github span { font-size: 2em; background: none; }
 

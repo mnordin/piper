@@ -47,9 +47,9 @@ $('.twitter, .tumblr, .flickr, .youtube, .github').hide();
 // Animates everything on DOM load
 // Disabled during development mode
 $(window).load(function(){
-	$("#main > div:first-child").show('1', function () {
+	$("#main > div:first-child").show('100', function () {
 		// use callee so don't have to name the function
-		$(this).next().show('1', arguments.callee);
+		$(this).next().show('100', arguments.callee);
 	});
 });
 
