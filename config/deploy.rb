@@ -1,9 +1,9 @@
 set :application, "piper"
-set :deploy_to, "/var/www/apps/#{application}"
+set :deploy_to, "/vhosts/rails.mnordin.net/#{application}"
 
-role :app, "nordin.starkast.net"
-role :web, "nordin.starkast.net"
-role :db, "nordin.starkast.net", :primary => true
+role :app, "ssh.starkast.net"
+role :web, "ssh.starkast.net"
+role :db, "ssh.starkast.net", :primary => true
 
 default_run_options[:pty] = true
 set :repository, "git://github.com/mnordin/piper.git"

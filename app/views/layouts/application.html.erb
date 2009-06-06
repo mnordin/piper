@@ -22,26 +22,56 @@
 		<link rel="icon" type="image/x-icon" href="http://mnordin.net/favicon.ico" />
 		<link rel="shortcut icon" type="image/x-icon" href="http://mnordin.net/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/combo?2.7.0/build/reset/reset-min.css" /> 
-    <%= stylesheet_link_tag 'application' %>
+    <%= stylesheet_link_tag 'application', 'slidebox', 'jquery.fancybox' %>
 		<!--[if lte IE 6]> <style type="text/css" media="screen"> body { background:none } </style> <![endif]-->
   </head>
+<!-- Google Analytics -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-6337077-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+<!-- End Google Analytics -->
   <body>
+		<div class="slide-panel top">
+			<div class="slidewrapper">
+				<h2>Vad är detta?</h2>
+				<p>Syfte: Skapa en totalt självuppdaterande sida som plockar information från sociala medier jag använder.</p>
+				<div class="menudescriptions">
+					<div class="desc">
+						<p>Twitter - Vad gör jag?</p>
+					</div>
+					<div class="desc">
+						<p>Tumblr - Bokmärken på sidor, bilder, länkar eller texter jag gillar</p>
+					</div>
+					<div class="desc">
+						<p>Flickr - Fotopubliceringstjänst</p>
+					</div>
+					<div class="desc">
+						<p>Youtube - Mina favoritklipp</p>
+					</div>
+				</div>
+			</div>
+		</div>
 		<div id="wrapper">
 			<div id="header">
 				<h1>mnordin</h1>
-				<p class="versiontag">beta</p>
 				<p>Min feed som täcker ungefär allting jag gör på webben.</p>
 			</div>
-			<div id="masthead">
+			<div id="menu">
 				<ul>
-					<li><a class="menutwitter" href="http://twitter.com/mnordin">gör <span>twitter</span></a></li>
-					<li><a class="menutumblr" href="http://mnordin.tumblr.com/">gillar <span>tumblr</span></a></li>
-					<li><a class="menuflickr" href="http://www.flickr.com/photos/mnordin/">fotar <span>flickr</span></a></li>
-					<li><a class="menuyoutube" href="http://www.youtube.com/user/gitclone">ser <span>youtube</span></a></li>
+					<li class="menutwitter"><a href="http://twitter.com/mnordin">gör</a></li>
+					<li class="menutumblr"><a href="http://mnordin.tumblr.com/">gillar</a></li>
+					<li class="menuflickr"><a href="http://www.flickr.com/photos/mnordin/">fotar</a></li>
+					<li class="menuyoutube"><a href="http://www.youtube.com/user/gitclone">ser</a></li>
 				</ul>
 			</div>
 			<div id="main" class="clearfix">
-				<%= yield %>
+					<%= yield %>
 			</div>
 		</div>
 		<div id="footer">
@@ -49,6 +79,6 @@
 		</div>
 		
 		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
-		<%= javascript_include_tag 'application' %>
+		<%= javascript_include_tag 'ify.min', 'slidebox', 'swfobject', 'jquery.fancybox-1.2.1', 'application' %>
   </body>
 </html>

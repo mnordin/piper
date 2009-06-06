@@ -1,0 +1,74 @@
+/* @override 
+	http://samuelgarneau.com/slidebox.css
+	http://samuelgarneau.com/lab/validator/slidebox.css
+	http://samuelgarneau.com/lab/slidebox.css
+*/
+
+body {
+	margin: 0;
+	padding: 10px 0 0;
+}
+
+.slide-panel {
+	position: absolute;
+	z-index: 25;
+}
+
+.bottom {
+	bottom: 0;
+}
+
+.top {
+	top: 0;
+}
+
+.content {
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 10;
+	overflow: hidden;
+	text-align: left;
+	height: 0;
+	width: 100%;
+	color: #fff;
+	background: #000;
+}
+
+.slidewrapper {
+	width: 96em;
+	margin: 2em auto 0;
+}
+
+.content h2 { font-size: 4em; }
+.content p { font-size: 2em; margin: .2em 0; }
+
+.slide-button {
+	left: 50%;
+	margin-left: 16.5em;
+	position: relative;
+	width: 150px;
+	z-index: 20;
+	cursor: pointer;
+	height: 30px;
+	padding-top: 10px;
+	text-align: center;
+	font-size: 2em;
+	color: #fff;
+	background: #000;
+}
+
+.content, .slide-button { opacity: 0.9; }
+
+.slide-button:hover {
+	color: #9f9d8e;
+}
+
+.slidewrapper {
+	display: none;
+}
+
+.content .slidewrapper { display: block; }
+
+.desc { float: left; width: 24em; position: relative; }
+
+img.arrow { display: none; position: absolute; top: 8em; left: 10em; }
