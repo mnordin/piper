@@ -14,3 +14,16 @@ set :deploy_via, :remote_cache
 set :user, "nordin"
 set :admin_runner, "nordin"
 
+
+# --- FROM SKISTAR ---
+set :application, "piper"
+
+set :host, "skistar.eframe.se"
+
+set :deploy_to, "/home/deploy/apps/#{application}"
+
+set :use_sudo, false
+
+ssh_options[:port] = 8888
+
+default_run_options[:pty] = true

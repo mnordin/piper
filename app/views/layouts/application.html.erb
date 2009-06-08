@@ -40,13 +40,13 @@ pageTracker._trackPageview();
 		<div class="slide-panel top">
 			<div class="slidewrapper">
 				<h2>Vad är detta?</h2>
-				<p>Syfte: Skapa en totalt självuppdaterande sida som plockar information från sociala medier jag använder.</p>
+				<p>En totalt självuppdaterande sida som plockar information från sociala medier jag använder.</p>
 				<div class="menudescriptions">
 					<div class="desc">
 						<p>Twitter - Vad gör jag?</p>
 					</div>
 					<div class="desc">
-						<p>Tumblr - Bokmärken på sidor, bilder, länkar eller texter jag gillar</p>
+						<p>Tumblr - Bokmärken på bilder, länkar eller texter jag gillar</p>
 					</div>
 					<div class="desc">
 						<p>Flickr - Fotopubliceringstjänst</p>
@@ -60,7 +60,6 @@ pageTracker._trackPageview();
 		<div id="wrapper">
 			<div id="header">
 				<h1>mnordin</h1>
-				<p>Min feed som täcker ungefär allting jag gör på webben.</p>
 			</div>
 			<div id="menu">
 				<ul>
@@ -73,12 +72,28 @@ pageTracker._trackPageview();
 			<div id="main" class="clearfix">
 					<%= yield %>
 			</div>
+			
+			<script type="text/javascript" charset="utf-8">
+				/*
+				function youtube( videoid ) {
+					//var player = document.getElementById("player");
+					//player.innerHTML = '<object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/'+videoid+'&hl=sv&fs=1&"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+videoid+'&hl=sv&fs=1&" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>';
+					
+					document.getElementById('player').text = "<object width=\"425\" height=\"344\"><param name=\"movie\" value=\"http://www.youtube.com/v/"+videoid+"&hl=sv&fs=1&\"></param><param name=\"allowFullScreen\" value=\"true\"></param><param name=\"allowscriptaccess\" value=\"always\"></param><embed src=\"http://www.youtube.com/v/"+videoid+"&hl=sv&fs=1&\" type=\"application/x-shockwave-flash\" allowscriptaccess=\"always\" allowfullscreen=\"true\" width=\"425\" height=\"344\"></embed></object>";
+				}
+				*/
+			</script>
 		</div>
+		
+		<div id="player" style="display:none;">
+			<p>SOMETHING IS TERRIBLY WRONG!</p>
+		</div>
+		
 		<div id="footer">
 			<p>Markus Nordin<br /><span class="email">markus dot nordin at gmail dot com</span><br /><span class="phone">&nbsp;</span></p>
 		</div>
 		
 		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.2.min.js"></script>
-		<%= javascript_include_tag 'ify.min', 'slidebox', 'swfobject', 'jquery.fancybox-1.2.1', 'application' %>
+		<%= javascript_include_tag 'ify.min', 'slidebox', 'jquery.fancybox-1.2.1', 'application' %>
   </body>
 </html>

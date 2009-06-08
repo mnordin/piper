@@ -4,7 +4,7 @@ $('li.menutumblr a').before('<span>tumblr</span>');
 $('li.menuflickr a').before('<span>flickr</span>');
 $('li.menuyoutube a').before('<span>youtube</span>');
 
-// Checks and prepares all entries that are longer than one line (longer than x pixels)
+// Checks and prepares all entries that are taller than one line (taller than x pixels)
 $.extend($.expr[':'],{
   height: function(a,i,m) {
   if(!m[3]||!(/^(<|>)\d+$/).test(m[3])) {return false;}
@@ -72,10 +72,27 @@ $(window).load(function(){
 // Menu interaction
 var displaythis = 'all';
 
+function highlightcolor(displaythis) {
+	if( displaythis == 'twitter') {
+		return '#33ccff';
+	}
+	else if( displaythis == 'tumblr' ){
+		return '#2c4762';
+	}
+	else if( displaythis == 'flickr' ){
+		return '#ff0084';
+	}
+	else if( displaythis == 'youtube' ){
+		return '#ff3232';
+	}
+}
+
 $('#menu li a').click(function(){
 	if( displaythis == $(this).siblings('span').text() ) {
 		displaythis = 'all';
 		$('#menu li').removeClass('selected');
+		$('#main > div span, #main > div strong').css({ 'background-color' : '#000' });
+		$('#main > div a.tumblrimg img').css({ 'border-color' : '#000' });
 		$('#main > div').show();
 		$('#main').css( 'background' , 'transparent url("../images/grid_bg.gif") repeat-y 0 0' );
 		return false;
@@ -85,6 +102,8 @@ $('#menu li a').click(function(){
 	$(this).parent('li').addClass('selected');
 	$('#main > div').hide();
 	$('div.'+displaythis+'').show();
+	$('div.'+displaythis+' strong, div.'+displaythis+' span').css({ 'background-color' : highlightcolor(displaythis) });
+	$('div.'+displaythis+' a.tumblrimg img').css({ 'border-color' : highlightcolor(displaythis) });
 	$('#main').css( 'background' , 'transparent url("../images/grid_'+displaythis+'.gif") repeat-y 0 0' );
 	return false;
 });
@@ -97,7 +116,7 @@ $('em.tumblrimg').each(function(){
 	var imageSrc = $(this).find('img').attr('src');
 	var fullsizeUrl = $(this).find('a').attr('href');
 	$(this).find('*').remove();
-	$(this).after('<a href="'+fullsizeUrl+'" class="fancybox tumblrimg"><img src="'+imageSrc+'" alt="Image" /></a>');
+	$(this).append('<a href="'+fullsizeUrl+'" class="fancybox tumblrimg"><img src="'+imageSrc+'" alt="Image" /></a>');
 	
 });
 
@@ -106,7 +125,7 @@ $('em.tumblrimg').each(function(){
 // Not really sure how the interaction is supposed to be on these
 
 $('div.desc').hover( function(){
-	$(this).after('<img src="../images/arrow-down.png" alt="Arrow" class="arrow" />');
+	$(this).append($('<img src="images/arrow-down.png" alt="Arrow" class="arrow" />'));
 	var arrowx = 0;
 	var arrowy = 0;
 	
@@ -116,9 +135,34 @@ $('div.desc').hover( function(){
 											'right' : arrowy+'px',
 	},
 	function(){
-		('img.arrow').remove();
+		$('img.arrow').remove();
 	}
 	);
+});
+
+// Tumblr link background fix
+$('.tumblr').each( function(){
+	$(this).find('span:first').css({
+		'background' : '#000 url("../images/tumblr-link.gif") no-repeat 8px 6px',
+		'padding-left' : '1.5em'
+	});
+})
+
+
+
+// Prepares and fixes Fancybox to allow Youtube videos to play
+$(document).ready(function(){
+	$('div.youtube a').each(function(){
+		$(this).attr( 'href', '#player' );
+	});
+});
+
+$('div.youtube a').hover(function(){
+	var imgsrc = $(this).find('img').attr('src');
+	getid = new Array();
+	getid = imgsrc.split('/');
+	var videoid = getid[4];
+	document.getElementById('player').innerHTML = '<object width="560" height="340"><param name="movie" value="http://www.youtube.com/v/'+videoid+'&hl=sv&fs=1&autoplay=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/'+videoid+'&hl=sv&fs=1&autoplay=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" autoplay="1" width="560" height="340"></embed></object>';
 });
 
 // Slide box and Fancy Box initializer
@@ -126,6 +170,7 @@ $(document).ready(function(){
 	$('.slide-panel').slideBox();
 	$('.tumblr a').fancybox();
 	$('div.youtube a').fancybox({
+		hideOnContentClick: false,
 		overlayShow: true,
 		frameWidth: 560,
 		frameHeight: 340

@@ -69,6 +69,6 @@ body {
 
 .content .slidewrapper { display: block; }
 
-.desc { float: left; width: 24em; position: relative; }
+.desc { float: left; width: 24em; height: 8.5em; position: relative; }
 
 img.arrow { display: none; position: absolute; top: 8em; left: 10em; }
